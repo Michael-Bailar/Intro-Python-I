@@ -10,3 +10,11 @@ num = int(num)
 
 # YOUR CODE HERE
 
+def evencheck(number):
+    "checks if odd or even"
+    if number %2 == 0:
+        print("Even!")
+    else:
+        print("Odd")
+
+evencheck(num)
