@@ -29,4 +29,32 @@ it should use today’s date to get the month and year.
 
 import sys
 import calendar
-from datetime import datetime
+from datetime import date
+
+
+if len(sys.argv) == 1:
+  "if user does not input a date"
+  year = int(date.today().strftime("%Y"))
+  month = int(date.today().strftime("%m"))
+elif len(sys.argv) == 2:
+  "if user inputs only a month"
+  year = int(date.today().strftime("%Y"))
+  month = int(sys.argv[1])
+elif len(sys.argv) == 3:
+  "if yser inputs both a month and a year"
+  year = int(sys.argv[1])
+  month = int(sys.argv[2])
+else:
+  "if the user inputs too many things"
+  print("Please enter a correctly formatted date YYYY MM")
+  exit()
+
+def getcalendar(y,m):
+  "Print out the month requested"
+  print(calendar.month(y,m))
+
+"call function"
+getcalendar(year,month)
+
+
+
